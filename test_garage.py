@@ -1,5 +1,7 @@
 import pytest
-from garage import enter_garage
+from garage import enter_garage, exit_garage
+
+#------enter_garage------
 
 def test_enter_garage_basic(garage):
     assert enter_garage(garage, 10, 1) == garage
@@ -18,3 +20,9 @@ def test_enter_garage_full(garage):
         for i in range(10):
             enter_garage(garage, i, i)
         assert enter_garage(garage, 11, 11)
+
+#------exit_garage------
+
+def test_exit_garage_id_not_in_garage(garage_car):
+    with pytest.raises(KeyError):
+        assert exit_garage(garage_car, 4) == False
