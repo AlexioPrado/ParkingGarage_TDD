@@ -12,3 +12,9 @@ def test_enter_garage_car_already_in_garage(garage):
     with pytest.raises(ValueError):
         enter_garage(garage, 1, 3)
         assert enter_garage(garage, 1, 4)
+
+def test_enter_garage_full(garage):
+    with pytest.raises(ValueError):
+        for i in range(10):
+            enter_garage(garage, i, i)
+        assert enter_garage(garage, 11, 11)
