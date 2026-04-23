@@ -1,5 +1,5 @@
 import pytest
-from garage import enter_garage, exit_garage
+from garage import enter_garage, exit_garage, get_available_spots
 
 #------enter_garage------
 
@@ -29,4 +29,9 @@ def test_exit_garage_id_not_in_garage(garage_car):
 
 def test_exit_garage_true(garage_car):
     assert exit_garage(garage_car, 1) == True
+
+#------get_available_spots------
+
+def get_available_spots(garage_car):
+    assert get_available_spots(garage_car) == 7
 
