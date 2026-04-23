@@ -3,3 +3,7 @@ from garage import enter_garage
 
 def test_enter_garage_basic(garage):
     assert enter_garage(garage, 10, 1) == garage
+
+def test_enter_garage_invalid_hour(garage):
+    with pytest.raises(TypeError):
+        assert enter_garage(garage, 9, "6")
