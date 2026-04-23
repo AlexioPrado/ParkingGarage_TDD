@@ -26,3 +26,4 @@ def test_enter_garage_full(garage):
 def test_exit_garage_id_not_in_garage(garage_car):
     with pytest.raises(KeyError):
         assert exit_garage(garage_car, 4) == False
+

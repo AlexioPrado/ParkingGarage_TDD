@@ -13,7 +13,7 @@ def enter_garage(garage, car_id, entry_hour):
     return garage
 
 def exit_garage(garage, car_id):
-    pass
+    return False
 
 def get_available_spots(garage):
     pass
