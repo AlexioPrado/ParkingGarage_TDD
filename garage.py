@@ -13,7 +13,16 @@ def enter_garage(garage, car_id, entry_hour):
     return garage
 
 def exit_garage(garage, car_id):
-    raise KeyError("Car not in garage")
+    car_id_checker = 0
+    for id in garage["cars"].keys():
+        if id = car_id:
+            del garage["cars"][car_id]
+            return True
+        else:
+            car_id_checker += 1
+    if car_id_checker == len(garage["cars"].keys()):
+        raise KeyError("Car not in garage")
+
 
 def get_available_spots(garage):
     pass
