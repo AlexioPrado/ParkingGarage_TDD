@@ -35,3 +35,5 @@ def test_exit_garage_true(garage_car):
 def test_get_available_spots(garage_car):
     assert get_available_spots(garage_car) == 7
 
+def test_get_available_spots(garage_car2):
+    assert get_available_spots(garage_car2) == 4
