@@ -15,7 +15,7 @@ def enter_garage(garage, car_id, entry_hour):
 def exit_garage(garage, car_id):
     car_id_checker = 0
     for id in garage["cars"].keys():
-        if id = car_id:
+        if id == car_id:
             del garage["cars"][car_id]
             return True
         else:
