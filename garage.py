@@ -2,7 +2,7 @@
 def enter_garage(garage, car_id, entry_hour):
     if not isinstance(entry_hour, int):
         raise TypeError("EntryHour must be a int")
-    for id in garage["cars"].values():
+    for id in garage["cars"].keys():
         if id == car_id:
             raise ValueError("Car already in garage")
     if len(garage["cars"]) >= garage["capacity"]:
