@@ -2,4 +2,4 @@ import pytest
 
 @pytest.fixture
 def garage():
-    return {"capacity": 10, "cars": []}
+    return {"capacity": 10, "cars": {}}
