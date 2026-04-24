@@ -41,4 +41,4 @@ def test_get_available_spots_4(garage_car2):
 #------get_available_spots------
 
 def test_calculate_fee_basic():
-    assert calculate_fee(6 * 4) == 24
+    assert calculate_fee(6, 4) == 24
