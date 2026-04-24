@@ -63,5 +63,5 @@ def test_calculate_fee_negatives(hours, rate):
     (True, "67")
 ])
 def test_calculate_fee_nonInt_nonFloat(hours, rate):
-    with pytest.raises(ValueError):
+    with pytest.raises(TypeError):
         assert calculate_fee(hours, rate)
