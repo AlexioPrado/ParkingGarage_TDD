@@ -1,5 +1,5 @@
 import pytest
-from garage import enter_garage, exit_garage, get_available_spots
+from garage import enter_garage, exit_garage, get_available_spots, calculate_fee
 
 #------enter_garage------
 
@@ -37,3 +37,8 @@ def test_get_available_spots_7(garage_car):
 
 def test_get_available_spots_4(garage_car2):
     assert get_available_spots(garage_car2) == 4
+
+#------get_available_spots------
+
+def test_calculate_fee_basic():
+    assert calculate_fee(6 * 4) == 24
