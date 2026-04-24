@@ -56,3 +56,12 @@ def test_calculate_fee_correct_path(hours, rate, expected):
 def test_calculate_fee_negatives(hours, rate):
     with pytest.raises(ValueError):
         assert calculate_fee(hours, rate)
+
+@pytest.mark.parametrize("hours, rate", [
+    ("6", 2),
+    (3.745, "twelve"),
+    (True, "67")
+])
+def test_calculate_fee_nonInt_nonFloat(hours, rate):
+    with pytest.raises(ValueError):
+        assert calculate_fee(hours, rate)
