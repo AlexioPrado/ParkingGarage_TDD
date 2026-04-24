@@ -47,3 +47,12 @@ def test_get_available_spots_4(garage_car2):
 ])
 def test_calculate_fee_correct_path(hours, rate, expected):
     assert calculate_fee(hours, rate) == expected
+
+@pytest.mark.parametrize("hours, rate", [
+    (-6, 4),
+    (3.745, -2),
+    (-10, -4)
+])
+def test_calculate_fee_negatives(hours, rate):
+    with pytest.raises(ValueError):
+        assert calculate_fee(hours, rate)
