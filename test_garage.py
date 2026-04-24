@@ -42,3 +42,6 @@ def test_get_available_spots_4(garage_car2):
 
 def test_calculate_fee_basic():
     assert calculate_fee(6, 4) == 24
+
+def test_calculate_fee_decimal():
+    assert calculate_fee(3.745, 2) == 7.49
