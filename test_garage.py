@@ -45,3 +45,11 @@ def test_calculate_fee_basic():
 
 def test_calculate_fee_decimal():
     assert calculate_fee(3.745, 2) == 7.49
+
+@pytest.mark.parametrize("hours, rate, expected", [
+    (6, 4, 24),
+    (3.745, 2, 7.49),
+    (10, 4, 40)
+])
+def test_calculate_fee_correct_path(hours, rate, expected):
+    assert calculate_fee(hours, rate) == expected
